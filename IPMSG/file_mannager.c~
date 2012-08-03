@@ -1,0 +1,109 @@
+/* ************************************************************************
+ *       Filename:  file_mannager.c
+ *    Description:  
+ *        Version:  1.0
+ *        Created:  2009年09月15日 11时51分34秒
+ *       Revision:  none
+ *       Compiler:  gcc
+ *         Author:  YOUR NAME (), 
+ *        Company:  
+ * ************************************************************************/
+
+
+#include "file_mannager.h"
+#include <fcntl.h>
+#include "IPMSG.H"
+#include "sys_info.h"
+#include <string.h>
+
+FILE_INFO file;
+
+FILE_INFO sfile;
+
+void add_file(char *packno, char *fileopt, struct sockaddr_in addr)
+{
+	char *temp[10] = {NULL};
+	char hex[20] = "";
+	int i = 0;
+
+	temp[i++] = strtok(fileopt,":");
+	while((temp[i++] = strtok(NULL,":"))!=NULL);
+	
+	sscanf(temp[2], "%x", &(file.size));
+	sprintf(hex, "%x", atoi(packno));
+	strcpy(file.packno, hex);
+	strcpy(file.fino, temp[0]);
+	strcpy(file.name, temp[1]);
+	file.addr = addr;
+}
+void file_list(void)
+{
+	printf("name:%s   [%s]\n",file.name, inet_ntoa(file.addr.sin_addr));	
+}
+
+void recv_file(void)
+{
+	char buf[1024] = "";
+	int sockfd = 0;
+	unsigned int filesize = file.size;
+	if((sockfd = socket(AF_INET, SOCK_STREAM, 0))<0)
+	{
+		perror("recv file socket");
+		exit(1);
+	}
+	if(connect(sockfd, (struct sockaddr*)&(file.addr), sizeof(struct sockaddr))!=0)
+	{
+		perror("connect");
+		exit(1);
+	}
+	sprintf(buf, "1:%d:%s:%s:%d:%s:%s:0",time(NULL),user(),host(),IPMSG_GETFILEDATA,file.packno, file.fino);
+	send(sockfd, buf, strlen(buf), 0);
+	int fd;
+	if((fd=open(file.name,O_RDWR|O_CREAT,0666))<0)
+	{
+		perror("open");
+		exit(1);
+	}
+	while(filesize!=0)
+	{
+		int len = recv(sockfd, buf,sizeof(buf),0);
+		write(fd, buf, len);
+		filesize -= len;
+	}
+	close(fd);
+	close(sockfd);
+}
+
+void *send_file_thread(void *arg)
+{
+	int tcp_fd = get_tcp_fd();
+	while(1)
+	{
+		int cfd=0;
+		struct sockaddr_in addr={AF_INET};
+		int addrlen=sizeof(addr);
+		char buf[1024]="";
+		int fd = 0;
+		if((cfd=accept(tcp_fd, (struct sockaddr*)&addr, &addrlen))<0)
+		{
+			perror("accpet");
+			exit(1);
+		}
+		recv(cfd, buf, sizeof(buf),0);
+			
+		if((fd=open(sfile.name, O_RDONLY))<0)
+		{
+			perror("open sendfile");
+			exit(1);
+		}
+		while(sfile.size!=0)
+		{
+			int len = read(fd, buf, sizeof(buf));
+			send(cfd, buf, len,0);
+			sfile.size -= len;
+		}
+		close(cfd);
+		close(fd);
+		//printf("send file over!\n");
+	}
+}

@@ -1,0 +1,200 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.7	//
+CC	makefile	/^CC=gcc$/;"	m
+CFLAGS	makefile	/^CFLAGS=-lpthread$/;"	m
+FILELIST_SEPARATOR	IPMSG.H	135;"	d
+FILE_INFO	file_mannager.h	/^}FILE_INFO,*PFILE_INFO;$/;"	t	typeref:struct:file_info
+GET_MODE	IPMSG.H	18;"	d
+GET_OPT	IPMSG.H	19;"	d
+HOSTLIST_DUMMY	IPMSG.H	137;"	d
+HOSTLIST_SEPARATOR	IPMSG.H	136;"	d
+IPMSG_ABSENCEOPT	IPMSG.H	59;"	d
+IPMSG_ALLREVSORTOPT	IPMSG.H	166;"	d
+IPMSG_ANSENTRY	IPMSG.H	30;"	d
+IPMSG_ANSLIST	IPMSG.H	36;"	d
+IPMSG_ANSPUBKEY	IPMSG.H	56;"	d
+IPMSG_ANSREADMSG	IPMSG.H	43;"	d
+IPMSG_ANS_TIMER	IPMSG.H	155;"	d
+IPMSG_AUTORETOPT	IPMSG.H	71;"	d
+IPMSG_BLOWFISH_128	IPMSG.H	87;"	d
+IPMSG_BLOWFISH_128ALL	IPMSG.H	97;"	d
+IPMSG_BLOWFISH_128OLD	IPMSG.H	94;"	d
+IPMSG_BLOWFISH_256	IPMSG.H	88;"	d
+IPMSG_BROADCASTOPT	IPMSG.H	68;"	d
+IPMSG_BROADCAST_TIMER	IPMSG.H	148;"	d
+IPMSG_BR_ABSENCE	IPMSG.H	31;"	d
+IPMSG_BR_ENTRY	IPMSG.H	28;"	d
+IPMSG_BR_EXIT	IPMSG.H	29;"	d
+IPMSG_BR_ISGETLIST	IPMSG.H	33;"	d
+IPMSG_BR_ISGETLIST2	IPMSG.H	37;"	d
+IPMSG_DEFAULT_PORT	IPMSG.H	23;"	d
+IPMSG_DELMSG	IPMSG.H	42;"	d
+IPMSG_DIALUPOPT	IPMSG.H	61;"	d
+IPMSG_DUMMY_TIMER	IPMSG.H	153;"	d
+IPMSG_ENCRYPTOPT	IPMSG.H	63;"	d
+IPMSG_ENTRYMINSEC	IPMSG.H	145;"	d
+IPMSG_ENTRY_TIMER	IPMSG.H	152;"	d
+IPMSG_FILEATTACHOPT	IPMSG.H	62;"	d
+IPMSG_FILE_ACL	IPMSG.H	131;"	d
+IPMSG_FILE_ALIASFNAME	IPMSG.H	132;"	d
+IPMSG_FILE_ARCHIVEOPT	IPMSG.H	113;"	d
+IPMSG_FILE_ATIME	IPMSG.H	126;"	d
+IPMSG_FILE_BDEV	IPMSG.H	105;"	d
+IPMSG_FILE_CDEV	IPMSG.H	104;"	d
+IPMSG_FILE_CREATETIME	IPMSG.H	127;"	d
+IPMSG_FILE_CREATOR	IPMSG.H	128;"	d
+IPMSG_FILE_CTIME	IPMSG.H	124;"	d
+IPMSG_FILE_DIR	IPMSG.H	101;"	d
+IPMSG_FILE_EXHIDDENOPT	IPMSG.H	112;"	d
+IPMSG_FILE_FIFO	IPMSG.H	106;"	d
+IPMSG_FILE_FILETYPE	IPMSG.H	129;"	d
+IPMSG_FILE_FINDERINFO	IPMSG.H	130;"	d
+IPMSG_FILE_GID	IPMSG.H	119;"	d
+IPMSG_FILE_GROUPNAME	IPMSG.H	120;"	d
+IPMSG_FILE_HIDDENOPT	IPMSG.H	111;"	d
+IPMSG_FILE_MAJORNO	IPMSG.H	122;"	d
+IPMSG_FILE_MINORNO	IPMSG.H	123;"	d
+IPMSG_FILE_MTIME	IPMSG.H	125;"	d
+IPMSG_FILE_PERM	IPMSG.H	121;"	d
+IPMSG_FILE_REGULAR	IPMSG.H	100;"	d
+IPMSG_FILE_RESFORK	IPMSG.H	107;"	d
+IPMSG_FILE_RETPARENT	IPMSG.H	102;"	d
+IPMSG_FILE_RONLYOPT	IPMSG.H	110;"	d
+IPMSG_FILE_SYMLINK	IPMSG.H	103;"	d
+IPMSG_FILE_SYSTEMOPT	IPMSG.H	114;"	d
+IPMSG_FILE_UID	IPMSG.H	117;"	d
+IPMSG_FILE_UNICODEFNAME	IPMSG.H	133;"	d
+IPMSG_FILE_USERNAME	IPMSG.H	118;"	d
+IPMSG_FULLNAME	IPMSG.H	158;"	d
+IPMSG_GETABSENCEINFO	IPMSG.H	48;"	d
+IPMSG_GETDIRFILES	IPMSG.H	53;"	d
+IPMSG_GETFILEDATA	IPMSG.H	51;"	d
+IPMSG_GETINFO	IPMSG.H	45;"	d
+IPMSG_GETLIST	IPMSG.H	35;"	d
+IPMSG_GETLIST_FINISH	IPMSG.H	146;"	d
+IPMSG_GETPUBKEY	IPMSG.H	55;"	d
+IPMSG_GROUPREVSORTOPT	IPMSG.H	167;"	d
+IPMSG_H	IPMSG.H	12;"	d
+IPMSG_HOSTSORT	IPMSG.H	162;"	d
+IPMSG_ICMPSORTOPT	IPMSG.H	164;"	d
+IPMSG_IPADDRSORT	IPMSG.H	161;"	d
+IPMSG_LISTGETRETRY_TIMER	IPMSG.H	151;"	d
+IPMSG_LISTGET_TIMER	IPMSG.H	150;"	d
+IPMSG_MULTICASTOPT	IPMSG.H	69;"	d
+IPMSG_NAMESORT	IPMSG.H	160;"	d
+IPMSG_NEWMUTIOPT	IPMSG.H	75;"	d
+IPMSG_NICKNAME	IPMSG.H	157;"	d
+IPMSG_NOADDLISTOPT	IPMSG.H	76;"	d
+IPMSG_NOGROUPSORTOPT	IPMSG.H	163;"	d
+IPMSG_NOKANJISORTOPT	IPMSG.H	165;"	d
+IPMSG_NOLOGOPT	IPMSG.H	74;"	d
+IPMSG_NOOPERATION	IPMSG.H	26;"	d
+IPMSG_NOPOPUPOPT	IPMSG.H	70;"	d
+IPMSG_OKGETLIST	IPMSG.H	34;"	d
+IPMSG_PASSWORDOPT	IPMSG.H	73;"	d
+IPMSG_RC2_128	IPMSG.H	85;"	d
+IPMSG_RC2_128ALL	IPMSG.H	96;"	d
+IPMSG_RC2_128OLD	IPMSG.H	93;"	d
+IPMSG_RC2_256	IPMSG.H	86;"	d
+IPMSG_RC2_40	IPMSG.H	84;"	d
+IPMSG_RC2_40ALL	IPMSG.H	95;"	d
+IPMSG_RC2_40OLD	IPMSG.H	92;"	d
+IPMSG_READCHECKOPT	IPMSG.H	77;"	d
+IPMSG_READMSG	IPMSG.H	41;"	d
+IPMSG_RECVMSG	IPMSG.H	40;"	d
+IPMSG_RECV_TIMER	IPMSG.H	154;"	d
+IPMSG_RELEASEFILES	IPMSG.H	52;"	d
+IPMSG_RETRYOPT	IPMSG.H	72;"	d
+IPMSG_REVERSEICON	IPMSG.H	143;"	d
+IPMSG_RSA_1024	IPMSG.H	82;"	d
+IPMSG_RSA_2048	IPMSG.H	83;"	d
+IPMSG_RSA_512	IPMSG.H	81;"	d
+IPMSG_SECRETEXOPT	IPMSG.H	78;"	d
+IPMSG_SECRETOPT	IPMSG.H	67;"	d
+IPMSG_SENDABSENCEINFO	IPMSG.H	49;"	d
+IPMSG_SENDCHECKOPT	IPMSG.H	66;"	d
+IPMSG_SENDINFO	IPMSG.H	46;"	d
+IPMSG_SENDMSG	IPMSG.H	39;"	d
+IPMSG_SEND_TIMER	IPMSG.H	149;"	d
+IPMSG_SERVEROPT	IPMSG.H	60;"	d
+IPMSG_SIGN_MD5	IPMSG.H	89;"	d
+IPMSG_SUBREVSORTOPT	IPMSG.H	168;"	d
+IPMSG_TIMERINTERVAL	IPMSG.H	144;"	d
+IPMSG_USE	user_mannager.h	/^}IPMSG_USE;$/;"	t	typeref:struct:usr_date
+IPMSG_VERSION	IPMSG.H	22;"	d
+OBJ	makefile	/^OBJ=comm.o main.o sys_info.o user_mannager.o user_interface.o file_mannager.o $/;"	m
+PFILE_INFO	file_mannager.h	/^}FILE_INFO,*PFILE_INFO;$/;"	t	typeref:struct:file_info
+_COMM_H_	comm.h	12;"	d
+_FILE_MANNAGER_H_	file_mannager.h	14;"	d
+_SYS_INFO_H_	sys_info.h	2;"	d
+_USER_INTERFACE_H_	user_interface.h	14;"	d
+_USER_MANNAGER_H_	user_mannager.h	14;"	d
+add_file	file_mannager.c	/^void add_file(char *packno, char *fileopt, struct sockaddr_in addr)$/;"	f	signature:(char *packno, char *fileopt, struct sockaddr_in addr)
+add_file	file_mannager.h	/^void add_file(char *packno, char *fileopt, struct sockaddr_in addr);$/;"	p	signature:(char *packno, char *fileopt, struct sockaddr_in addr)
+add_usr	user_mannager.c	/^IPMSG_USE *add_usr(char *usr,char *host,char *ip)$/;"	f	signature:(char *usr,char *host,char *ip)
+add_usr	user_mannager.h	/^IPMSG_USE *add_usr(char *usr,char *host,char *ip);$/;"	p	signature:(char *usr,char *host,char *ip)
+addr	file_mannager.h	/^	struct sockaddr_in addr;$/;"	m	struct:file_info	typeref:struct:file_info::sockaddr_in	access:public
+del_usr	user_mannager.c	/^IPMSG_USE *del_usr(char *ip)$/;"	f	signature:(char *ip)
+del_usr	user_mannager.h	/^IPMSG_USE *del_usr(char *ip);$/;"	p	signature:(char *ip)
+file	file_mannager.c	/^FILE_INFO file;$/;"	v
+file_info	file_mannager.h	/^typedef struct file_info {$/;"	s
+file_info::addr	file_mannager.h	/^	struct sockaddr_in addr;$/;"	m	struct:file_info	typeref:struct:file_info::sockaddr_in	access:public
+file_info::fino	file_mannager.h	/^	char fino[5];$/;"	m	struct:file_info	access:public
+file_info::name	file_mannager.h	/^	char name[20];$/;"	m	struct:file_info	access:public
+file_info::next	file_mannager.h	/^	struct file_info *next;$/;"	m	struct:file_info	typeref:struct:file_info::file_info	access:public
+file_info::packno	file_mannager.h	/^	char packno[20];$/;"	m	struct:file_info	access:public
+file_info::size	file_mannager.h	/^	unsigned size;$/;"	m	struct:file_info	access:public
+file_list	file_mannager.c	/^void file_list(void)$/;"	f	signature:(void)
+file_list	file_mannager.h	/^void file_list(void);$/;"	p	signature:(void)
+find_user_byid	user_mannager.c	/^IPMSG_USE *find_user_byid(int id)$/;"	f	signature:(int id)
+find_user_byid	user_mannager.h	/^IPMSG_USE *find_user_byid(int id);$/;"	p	signature:(int id)
+find_usr	user_mannager.c	/^int find_usr(char *ip)$/;"	f	signature:(char *ip)
+fino	file_mannager.h	/^	char fino[5];$/;"	m	struct:file_info	access:public
+get_tcp_fd	sys_info.c	/^int get_tcp_fd(void)$/;"	f	signature:(void)
+get_tcp_fd	sys_info.h	/^int get_tcp_fd(void);$/;"	p	signature:(void)
+get_udp_fd	sys_info.c	/^int get_udp_fd(void)$/;"	f	signature:(void)
+get_udp_fd	sys_info.h	/^int get_udp_fd(void);$/;"	p	signature:(void)
+head	user_mannager.c	/^static IPMSG_USE *head=NULL;$/;"	v	file:
+host	sys_info.c	/^char * host(void)$/;"	f	signature:(void)
+host	sys_info.h	/^char * host(void);$/;"	p	signature:(void)
+host_name	user_mannager.h	/^	char host_name[20];$/;"	m	struct:usr_date	access:public
+login	sys_info.c	/^void login(int sockfd,char *user, char *host)$/;"	f	signature:(int sockfd,char *user, char *host)
+main	main.c	/^int main()$/;"	f
+name	file_mannager.h	/^	char name[20];$/;"	m	struct:file_info	access:public
+next	file_mannager.h	/^	struct file_info *next;$/;"	m	struct:file_info	typeref:struct:file_info::file_info	access:public
+next	user_mannager.h	/^	struct usr_date *next;$/;"	m	struct:usr_date	typeref:struct:usr_date::usr_date	access:public
+packno	file_mannager.h	/^	char packno[20];$/;"	m	struct:file_info	access:public
+recv_file	file_mannager.c	/^void recv_file(void)$/;"	f	signature:(void)
+recv_msg	comm.c	/^void *recv_msg(void* arg)$/;"	f	signature:(void* arg)
+recv_msg	comm.h	/^void *recv_msg(void* arg);$/;"	p	signature:(void* arg)
+send_file_thread	file_mannager.c	/^void *send_file_thread(void *arg)$/;"	f	signature:(void *arg)
+send_file_thread	file_mannager.h	/^void *send_file_thread(void *arg);$/;"	p	signature:(void *arg)
+send_msg	comm.c	/^void send_msg(char*argv[])$/;"	f	signature:(char*argv[])
+send_msg	comm.h	/^void send_msg(char*argv[]);$/;"	p	signature:(char*argv[])
+sendfile	comm.c	/^void sendfile(char* argv[])$/;"	f	signature:(char* argv[])
+sendfile	comm.h	/^void sendfile(char *argv[]);$/;"	p	signature:(char *argv[])
+sfile	file_mannager.c	/^FILE_INFO sfile;$/;"	v
+size	file_mannager.h	/^	unsigned size;$/;"	m	struct:file_info	access:public
+sys_host	sys_info.c	/^static char sys_host[20]="";$/;"	v	file:
+sys_init	sys_info.c	/^void sys_init(char *user, char *host)$/;"	f	signature:(char *user, char *host)
+sys_init	sys_info.h	/^void sys_init(char *user, char *host);$/;"	p	signature:(char *user, char *host)
+sys_user	sys_info.c	/^static char sys_user[20]="";$/;"	v	file:
+tcp_fd	sys_info.c	/^int tcp_fd = 0;$/;"	v
+udp_fd	sys_info.c	/^int udp_fd = 0;$/;"	v
+user	sys_info.c	/^char * user(void)$/;"	f	signature:(void)
+user	sys_info.h	/^char * user(void);$/;"	p	signature:(void)
+user_interface	user_interface.c	/^void * user_interface(void* arg)$/;"	f	signature:(void* arg)
+user_interface	user_interface.h	/^void * user_interface(void* arg);$/;"	p	signature:(void* arg)
+user_list	user_mannager.c	/^void user_list(void)$/;"	f	signature:(void)
+usr_date	user_mannager.h	/^typedef struct usr_date$/;"	s
+usr_date::host_name	user_mannager.h	/^	char host_name[20];$/;"	m	struct:usr_date	access:public
+usr_date::next	user_mannager.h	/^	struct usr_date *next;$/;"	m	struct:usr_date	typeref:struct:usr_date::usr_date	access:public
+usr_date::usr_ip	user_mannager.h	/^	char usr_ip[20];$/;"	m	struct:usr_date	access:public
+usr_date::usr_name	user_mannager.h	/^	char usr_name[20];$/;"	m	struct:usr_date	access:public
+usr_ip	user_mannager.h	/^	char usr_ip[20];$/;"	m	struct:usr_date	access:public
+usr_list	user_mannager.h	/^void usr_list(void);$/;"	p	signature:(void)
+usr_name	user_mannager.h	/^	char usr_name[20];$/;"	m	struct:usr_date	access:public

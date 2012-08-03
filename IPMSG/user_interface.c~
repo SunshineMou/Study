@@ -1,0 +1,74 @@
+/* ************************************************************************
+ *       Filename:  user_interface.h
+ *    Description:  
+ *        Version:  1.0
+ *        Created:  2009年09月15日 11时15分06秒
+ *       Revision:  none
+ *       Compiler:  gcc
+ *         Author:  YOUR NAME (), 
+ *        Company:  
+ * ************************************************************************/
+
+
+#include "user_interface.h"
+#include "user_mannager.h"
+#include "sys_info.h"
+#include <sys/wait.h>
+
+void * user_interface(void* arg)
+{	
+	char buf[200]="";
+	while(1)
+	{
+		char *temp[10]={NULL};
+		int i = 0;
+		printf("MY_IPMSG>>");
+		fgets(buf, sizeof(buf), stdin);
+		buf[strlen(buf)-1]='\0';
+		temp[i++]=strtok(buf," ");
+		while((temp[i++]=strtok(NULL," "))!=NULL);
+		
+		if(strcmp(temp[0],"list")==0)
+		{
+			printf("user list\n");
+			user_list();
+		}
+		else if(strcmp(temp[0], "exit")==0)
+		{
+			close(get_tcp_fd);
+			close(get_udp_fd);
+			printf("BYEBYE!\n");	
+			exit(1);
+		}
+		else if(strcmp(temp[0], "getfile")==0)
+		{
+			recv_file();	
+		}
+		else if(strcmp(temp[0],"filelist")==0)
+		{
+			file_list();
+		}
+		else if(strcmp(temp[0],"sendfile")==0)
+		{
+			sendfile(temp);
+		}
+		else if(strcmp(temp[0], "ls")==0)
+		{
+			pid_t pid=0;
+			if((pid=fork())==0)
+			{
+				execlp("ls","ls",NULL);
+			}
+			waitpid(pid,NULL,WUNTRACED);
+		}
+		else if(strcmp(temp[0],"say")==0)
+		{
+			send_msg(temp);
+		}
+	}
+	return NULL;
+}
+
+
+
+
