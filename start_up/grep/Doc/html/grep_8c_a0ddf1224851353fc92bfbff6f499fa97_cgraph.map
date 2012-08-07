@@ -1,0 +1,9 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$grep_8c.html#ad725f095d357ddd84e283d9d313f86e6" title="Process the option information;." alt="" coords="111,5,228,35"/>
+<area shape="rect" id="node5" href="$grep_8c.html#ac67113c7c9c189b5993995987ffd4be3" title="This function begins the search process;." alt="" coords="137,59,201,88"/>
+<area shape="rect" id="node7" href="$grep_8c.html#af3b743a07d509e0e1cd535ceaaefb884" title="search_directory" alt="" coords="416,31,544,60"/>
+<area shape="rect" id="node13" href="$grep_8c.html#a675badab75cb4a9b97fb5ac92669c4fb" title="This function is used to search pattern in a file;." alt="" coords="277,84,368,113"/>
+<area shape="rect" id="node9" href="$grep_8c.html#aabb59ed6fc07851912562b65b2094a10" title="This function is used to define the search way&#45;&#45;&#45;&#45;&gt;Ignore case;." alt="" coords="592,31,741,60"/>
+<area shape="rect" id="node11" href="$grep_8c.html#a4fd56ab76f558b1679b08787ec370186" title="This function is used to define the search way&#45;&#45;&#45;&#45;&gt;Case sensitive." alt="" coords="608,84,725,113"/>
+<area shape="rect" id="node15" href="$grep_8c.html#ac80385059968f2d1dd5fa9e1d054f43c" title="This function is used to read file in different way;." alt="" coords="443,84,517,113"/>
+</map>

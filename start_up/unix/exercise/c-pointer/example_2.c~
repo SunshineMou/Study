@@ -1,0 +1,29 @@
+/*!
+ * \file	example_2.c
+ * \brief	
+ * \author	sunshine
+ * contact  mxdhlj@163.com
+ * \version	0.00
+ * \date	11-10-09 16:23:23
+ */
+#include <stdio.h>
+
+int main(int argc, char* argv[])
+{
+    int n;
+    int begin = 1;
+    int temp;
+    int final;
+    
+    temp = begin;
+    for(n = 10; n > 0; n--){
+        temp = (temp + 1) * 2;
+        if(n == 1){
+            final = temp;
+            printf("In the first day, the number is: %d\n", final);
+        }   
+    }
+     
+    return 0;
+}
+

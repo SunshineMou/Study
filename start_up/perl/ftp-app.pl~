@@ -1,0 +1,15 @@
+#!/usr/bin/perl
+use strict;
+use warnings;
+
+=begin comment
+File        ftp-app.pl
+Brief       FTP: Upload File
+Author      sunshine, mxdhlj@163.com
+Version     0.00
+Date        11-10-12 13:30:21
+=cut
+
+use Net::FTP;
+
+my $FtpHost = "";

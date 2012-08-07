@@ -1,0 +1,17 @@
+/*!
+ * \file	test.c
+ * \brief	
+ * \author	sunshine
+ * contact  mxdhlj@163.com
+ * \version	0.00
+ * \date	11-08-17 10:07:10
+ */
+
+#include <stdio.h>
+
+int main(int argc, char* argv[])
+{
+    printf("\026\n");     
+    return 0;
+}
+

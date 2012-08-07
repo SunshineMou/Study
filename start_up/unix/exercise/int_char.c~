@@ -1,0 +1,19 @@
+/*!
+ * \file	int_char.c
+ * \brief	
+ * \author	sunshine
+ * contact  mxdhlj@163.com
+ * \version	0.00
+ * \date	11-12-09 11:25:47
+ */
+#include <stdio.h>
+
+int main(int argc, char* argv[])
+{
+    char test = 'x';
+    int a = test;
+    printf("%d\n", a);
+     
+    return 0;
+}
+

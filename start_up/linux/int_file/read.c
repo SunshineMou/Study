@@ -1,0 +1,38 @@
+/*!
+ * \file	read.c
+ * \brief	
+ * \author	sunshine
+ * contact  mxdhlj@163.com
+ * \version	0.00
+ * \date	12-01-26 10:34:28
+ */
+#include <stdio.h>
+#include <fcntl.h>
+
+int main(int argc, char* argv[])
+{
+    int fd, fd_2;
+    char buf[10];
+
+    if((fd = open("if", O_RDONLY)) < 0){
+        fprintf(stderr, "Open file --if-- error!\n");
+        return 0;
+    }
+    fprintf(stderr, "Open file --if-- Success!\n");
+    
+    if(read(fd, &fd_2, sizeof(fd_2)) < 0){
+        perror("Read fd error");
+        return 0;
+    }
+
+    printf("fd is:%d\n", fd_2);
+
+    if(read(fd_2, &buf, 40) < 0){
+        perror("Read fd_2 error");
+        return 0;
+    }
+    printf("%c\n", *buf);
+
+    return 0;
+}
+

@@ -1,0 +1,32 @@
+#!/usr/bin/perl -w
+
+use strict;
+
+print "Directory to search: ";
+my $dir = <STDIN>;
+chomp $dir;
+print "Pattern to look for: ";
+my $pat = <STDIN>;
+chomp $pat;
+
+my ($file);
+
+opendir (DH,$dir) || die "Cannot open $dir: $!\n";
+while($file = readdir DH)
+{
+	next if (-d "$dir/$file");
+	if(! open(F,"$dir/$file"))
+	{
+		warn "Cannot search $file:$!\n";
+		next;	
+	}	
+	while(<F>)
+	{
+		if(/$pat/)
+		{
+			print "$file: $_\n";	
+		}	
+	}
+	close(F);
+}
+closedir(DH);

@@ -1,0 +1,37 @@
+/*!
+ * \file	binsearch.c
+ * \brief	
+ * \author	sunshine
+ * contact  mxdhlj@163.com
+ * \version	0.00
+ * \date	11-10-10 09:38:19
+ */
+#include <stdio.h>
+
+int binSearch(int *list, int n, int searchNum);
+
+int main(int argc, char* argv[])
+{
+    int numList[11] = {10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20};
+    int num;
+    num = binSearch(numList, 11, 16);
+    printf("It is the %d number in the array!\n", num);
+     
+    return 0;
+}
+
+int binSearch(int *list, int n, int searchNum){
+    int left, right;
+    int middle;
+    left  = 0;
+    right = n - 1;
+    while(left <= right){
+        middle = (left + right)/2;
+        if(searchNum > list[middle])
+            left = middle + 1;
+        else if(searchNum == list[middle])
+            return middle;
+        else
+            right = middle - 1;
+    }
+}

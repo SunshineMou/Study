@@ -1,0 +1,7 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$grep_8c.html#ac80385059968f2d1dd5fa9e1d054f43c" title="This function is used to read file in different way;." alt="" coords="172,7,247,36"/>
+<area shape="rect" id="node11" href="$grep_8c.html#af3b743a07d509e0e1cd535ceaaefb884" title="search_directory" alt="" coords="296,59,424,88"/>
+<area shape="rect" id="node5" href="$grep_8c.html#a675badab75cb4a9b97fb5ac92669c4fb" title="This function is used to search pattern in a file;." alt="" coords="315,5,405,35"/>
+<area shape="rect" id="node7" href="$grep_8c.html#ac67113c7c9c189b5993995987ffd4be3" title="This function begins the search process;." alt="" coords="473,32,537,61"/>
+<area shape="rect" id="node9" href="$grep_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="This is the main function;." alt="" coords="588,32,641,61"/>
+</map>

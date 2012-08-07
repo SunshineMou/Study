@@ -1,0 +1,366 @@
+\hypertarget{grep_8c}{
+\section{grep.c File Reference}
+\label{grep_8c}\index{grep.c@{grep.c}}
+}
+{\ttfamily \#include $<$stdio.h$>$}\par
+{\ttfamily \#include $<$stdlib.h$>$}\par
+{\ttfamily \#include $<$unistd.h$>$}\par
+{\ttfamily \#include $<$dirent.h$>$}\par
+{\ttfamily \#include $<$sys/stat.h$>$}\par
+{\ttfamily \#include $<$string.h$>$}\par
+Include dependency graph for grep.c:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{grep_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structparameter}{parameter}
+\begin{DoxyCompactList}\small\item\em Process parameter;. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{grep_8c_aabb59ed6fc07851912562b65b2094a10}{search\_\-ignore\_\-case} (const char $\ast$source, char $\ast$pattern)
+\begin{DoxyCompactList}\small\item\em This function is used to define the search way-\/-\/-\/-\/$>$Ignore case;. \item\end{DoxyCompactList}\item 
+int \hyperlink{grep_8c_a4fd56ab76f558b1679b08787ec370186}{search\_\-normal} (const char $\ast$source, char $\ast$pattern)
+\begin{DoxyCompactList}\small\item\em This function is used to define the search way-\/-\/-\/-\/$>$Case sensitive. \item\end{DoxyCompactList}\item 
+int \hyperlink{grep_8c_ac67113c7c9c189b5993995987ffd4be3}{search} (const char $\ast$source, char $\ast$pattern, char option, char choice)
+\begin{DoxyCompactList}\small\item\em This function begins the search process;. \item\end{DoxyCompactList}\item 
+int \hyperlink{grep_8c_a675badab75cb4a9b97fb5ac92669c4fb}{search\_\-file} (const char $\ast$source, char $\ast$pattern, char option)
+\begin{DoxyCompactList}\small\item\em This function is used to search pattern in a file;. \item\end{DoxyCompactList}\item 
+int \hyperlink{grep_8c_ad725f095d357ddd84e283d9d313f86e6}{process\_\-option} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Process the option information;. \item\end{DoxyCompactList}\item 
+int \hyperlink{grep_8c_ac80385059968f2d1dd5fa9e1d054f43c}{read\_\-file} (const char $\ast$source, char $\ast$pattern, char option)
+\begin{DoxyCompactList}\small\item\em This function is used to read file in different way;. \item\end{DoxyCompactList}\item 
+int \hyperlink{grep_8c_af3b743a07d509e0e1cd535ceaaefb884}{search\_\-directory} (const char $\ast$source, char $\ast$pattern, char option)
+\item 
+int \hyperlink{grep_8c_a0ddf1224851353fc92bfbff6f499fa97}{main} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em This is the main function;. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structparameter}{parameter} \hyperlink{grep_8c_a69277f024cd401bc6876e89a9d71d005}{param}
+\begin{DoxyCompactList}\small\item\em Process parameter;. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+sunshine contact \href{mailto:mxdhlj@163.com}{\tt mxdhlj@163.com} 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.00 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+11-\/03-\/15 19:01:25 
+\end{DoxyDate}
+
+
+\subsection{Function Documentation}
+\hypertarget{grep_8c_a0ddf1224851353fc92bfbff6f499fa97}{
+\index{grep.c@{grep.c}!main@{main}}
+\index{main@{main}!grep.c@{grep.c}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{int}]{ argc, }
+\item[{char $\ast$}]{ argv\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}}
+\label{grep_8c_a0ddf1224851353fc92bfbff6f499fa97}
+
+
+This is the main function;. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em argc}]\item[{\em argv\mbox{[}$\,$\mbox{]}}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{grep_8c_a0ddf1224851353fc92bfbff6f499fa97_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{grep_8c_ad725f095d357ddd84e283d9d313f86e6}{
+\index{grep.c@{grep.c}!process\_\-option@{process\_\-option}}
+\index{process\_\-option@{process\_\-option}!grep.c@{grep.c}}
+\subsubsection[{process\_\-option}]{\setlength{\rightskip}{0pt plus 5cm}int process\_\-option (
+\begin{DoxyParamCaption}
+\item[{int}]{ argc, }
+\item[{char $\ast$}]{ argv\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}}
+\label{grep_8c_ad725f095d357ddd84e283d9d313f86e6}
+
+
+Process the option information;. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em argc}]\item[{\em argv\mbox{[}$\,$\mbox{]}}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=248pt]{grep_8c_ad725f095d357ddd84e283d9d313f86e6_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{grep_8c_ac80385059968f2d1dd5fa9e1d054f43c}{
+\index{grep.c@{grep.c}!read\_\-file@{read\_\-file}}
+\index{read\_\-file@{read\_\-file}!grep.c@{grep.c}}
+\subsubsection[{read\_\-file}]{\setlength{\rightskip}{0pt plus 5cm}int read\_\-file (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{ source, }
+\item[{char $\ast$}]{ pattern, }
+\item[{char}]{ option}
+\end{DoxyParamCaption}
+)}}
+\label{grep_8c_ac80385059968f2d1dd5fa9e1d054f43c}
+
+
+This function is used to read file in different way;. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em source}]\item[{\em pattern}]\item[{\em option}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=286pt]{grep_8c_ac80385059968f2d1dd5fa9e1d054f43c_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{grep_8c_ac80385059968f2d1dd5fa9e1d054f43c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{grep_8c_ac67113c7c9c189b5993995987ffd4be3}{
+\index{grep.c@{grep.c}!search@{search}}
+\index{search@{search}!grep.c@{grep.c}}
+\subsubsection[{search}]{\setlength{\rightskip}{0pt plus 5cm}int search (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{ source, }
+\item[{char $\ast$}]{ pattern, }
+\item[{char}]{ option, }
+\item[{char}]{ choice}
+\end{DoxyParamCaption}
+)}}
+\label{grep_8c_ac67113c7c9c189b5993995987ffd4be3}
+
+
+This function begins the search process;. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em source}]\item[{\em pattern}]\item[{\em option}]\item[{\em choice}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{grep_8c_ac67113c7c9c189b5993995987ffd4be3_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=208pt]{grep_8c_ac67113c7c9c189b5993995987ffd4be3_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{grep_8c_af3b743a07d509e0e1cd535ceaaefb884}{
+\index{grep.c@{grep.c}!search\_\-directory@{search\_\-directory}}
+\index{search\_\-directory@{search\_\-directory}!grep.c@{grep.c}}
+\subsubsection[{search\_\-directory}]{\setlength{\rightskip}{0pt plus 5cm}int search\_\-directory (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{ source, }
+\item[{char $\ast$}]{ pattern, }
+\item[{char}]{ option}
+\end{DoxyParamCaption}
+)}}
+\label{grep_8c_af3b743a07d509e0e1cd535ceaaefb884}
+
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{grep_8c_af3b743a07d509e0e1cd535ceaaefb884_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=340pt]{grep_8c_af3b743a07d509e0e1cd535ceaaefb884_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{grep_8c_a675badab75cb4a9b97fb5ac92669c4fb}{
+\index{grep.c@{grep.c}!search\_\-file@{search\_\-file}}
+\index{search\_\-file@{search\_\-file}!grep.c@{grep.c}}
+\subsubsection[{search\_\-file}]{\setlength{\rightskip}{0pt plus 5cm}int search\_\-file (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{ source, }
+\item[{char $\ast$}]{ pattern, }
+\item[{char}]{ option}
+\end{DoxyParamCaption}
+)}}
+\label{grep_8c_a675badab75cb4a9b97fb5ac92669c4fb}
+
+
+This function is used to search pattern in a file;. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em source}]\item[{\em pattern}]\item[{\em option}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=390pt]{grep_8c_a675badab75cb4a9b97fb5ac92669c4fb_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=312pt]{grep_8c_a675badab75cb4a9b97fb5ac92669c4fb_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{grep_8c_aabb59ed6fc07851912562b65b2094a10}{
+\index{grep.c@{grep.c}!search\_\-ignore\_\-case@{search\_\-ignore\_\-case}}
+\index{search\_\-ignore\_\-case@{search\_\-ignore\_\-case}!grep.c@{grep.c}}
+\subsubsection[{search\_\-ignore\_\-case}]{\setlength{\rightskip}{0pt plus 5cm}int search\_\-ignore\_\-case (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{ source, }
+\item[{char $\ast$}]{ pattern}
+\end{DoxyParamCaption}
+)}}
+\label{grep_8c_aabb59ed6fc07851912562b65b2094a10}
+
+
+This function is used to define the search way-\/-\/-\/-\/$>$Ignore case;. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em source}]\item[{\em pattern}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{grep_8c_aabb59ed6fc07851912562b65b2094a10_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{grep_8c_a4fd56ab76f558b1679b08787ec370186}{
+\index{grep.c@{grep.c}!search\_\-normal@{search\_\-normal}}
+\index{search\_\-normal@{search\_\-normal}!grep.c@{grep.c}}
+\subsubsection[{search\_\-normal}]{\setlength{\rightskip}{0pt plus 5cm}int search\_\-normal (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{ source, }
+\item[{char $\ast$}]{ pattern}
+\end{DoxyParamCaption}
+)}}
+\label{grep_8c_a4fd56ab76f558b1679b08787ec370186}
+
+
+This function is used to define the search way-\/-\/-\/-\/$>$Case sensitive. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em source}]\item[{\em pattern}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{grep_8c_a4fd56ab76f558b1679b08787ec370186_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{grep_8c_a69277f024cd401bc6876e89a9d71d005}{
+\index{grep.c@{grep.c}!param@{param}}
+\index{param@{param}!grep.c@{grep.c}}
+\subsubsection[{param}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf parameter} {\bf param}}}
+\label{grep_8c_a69277f024cd401bc6876e89a9d71d005}
+
+
+Process parameter;. 
+

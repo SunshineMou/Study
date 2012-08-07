@@ -1,0 +1,57 @@
+/*!
+ * \file	detectNetworkFailed.c
+ * \brief	
+ * \author	sunshine
+ * contact  mxdhlj@163.com
+ * \version	0.00
+ * \date	11-09-08 09:25:01
+ */
+
+static int init_hotplug_socket(){
+    const int buffersize = 1024;
+    int ret;
+
+    struct sockaddr_nl snl;
+    memset(&snl, 0x00, sizeof(struct sockaddr_nl));
+    snl.nl_family = AF_NETLINK;
+    snl.nl_pid =getpid();
+    snl.nl_groups = 1;     /* 这是发广播用的，如果是发往内核该值为0*/
+    
+    /*
+     * SOC_DGRAM:与对方通信是不需要逻辑连接的，只需要送出一个报文，其地址是一个对方进程所使用的套接字；
+     * NETLINK_KOBJECT_UEVENT:内核事件向用户态通知
+     */
+    int hotplug_socket = socket(AF_NETLINK, SOCK_DGRAM, NETLINK_ROUTE);
+    if(hotplug_socket == -1){
+        printf("Error: Creat socket: %s",strerror(errno));
+        return -1;
+    }
+
+    setsockopt(hotplug_socket, SOL_SOCKET, SO_RCVBUFFORCE, &buffersize, sizeof(buffersize));
+
+    ret = bind(hotplug_socket, (struct sockaddr *)&snl, sizeof(struct sockaddr_nl));
+    if(ret < 0){
+        printf("Bind failed: %s", strerror(errno));
+        close(hotplug_socket);
+        return -1;
+    }
+
+    return hotplug_socket;
+}
+
+
+int main(int argc, char* argv[])
+{ 
+    int hotplug_socket = init_hotplug_socket();
+    
+    while(1){
+        char buffer[UEVENT_BUFFER_SIZE * 2] = {0};
+        recv(hotplug_socket, &buffer, sizeof(buffer), 0);
+        /*if(memcmp(buffer, USB_ADD_SIGNAL, strlen(USB_ADD_SIGNAL)) == 0){*/
+            /*printf("you have add an usb device on your computer!\n");*/
+            /*return 0;*/
+        /*}*/
+        printf(" %s | Sys Info\n", buffer);
+    }   
+    return 0;
+}

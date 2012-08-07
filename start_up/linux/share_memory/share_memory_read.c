@@ -1,0 +1,49 @@
+/*!
+ * \file	share_memory_read.c
+ * \brief	
+ * \author	sunshine
+ * contact  mxdhlj@163.com
+ * \version	0.00
+ * \date	11-12-23 16:30:32
+ */
+#include <sys/ipc.h>
+#include <sys/shm.h>
+#include <sys/types.h>
+#include <unistd.h>
+#include <stdio.h>
+
+typedef struct{
+    char name[4];
+    int age;
+}people;
+
+main(int argc, char** argv)
+{
+    int shm_id,i;
+    key_t key;
+    people *p_map;
+    char* name = "myshm";
+
+    key = ftok(name,0);
+    if(key == -1)
+        perror("ftok error");
+
+    /*shm_id = shmget(key,4096,IPC_CREAT);    */
+    shm_id = shmget(key, 0, 0600);    
+    if(shm_id == -1)
+    {
+        perror("shmget error");
+        return;
+    }
+
+    p_map = (people*)shmat(shm_id,NULL,0);
+    for(i = 0;i<10;i++)
+    {
+        printf( "name:%s\n",(*(p_map+i)).name );
+        printf( "age %d\n",(*(p_map+i)).age );
+    }
+
+    if(shmdt(p_map) == -1)
+        perror(" detach error ");
+}
+

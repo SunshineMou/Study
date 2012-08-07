@@ -1,0 +1,1 @@
+cmd_/home/sunshine/mountfs/start_up/driver/my_driver/hello_driver.ko := ld -r  -T /usr/src/linux-headers-3.0.0-16-generic/scripts/module-common.lds --build-id  -o /home/sunshine/mountfs/start_up/driver/my_driver/hello_driver.ko /home/sunshine/mountfs/start_up/driver/my_driver/hello_driver.o /home/sunshine/mountfs/start_up/driver/my_driver/hello_driver.mod.o

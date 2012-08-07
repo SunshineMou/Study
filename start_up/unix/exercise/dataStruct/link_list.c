@@ -1,0 +1,85 @@
+/*!
+ * \file	link_list.c
+ * \brief	
+ * \author	sunshine
+ * contact  mxdhlj@163.com
+ * \version	0.00
+ * \date	11-11-08 10:59:05
+ */
+#include <stdlib.h>
+#include <stdio.h>
+
+#define NUM 20
+
+struct node{
+    int    number;
+    struct node *next;
+};
+
+struct node *creat_link_list(void);
+struct node *sort_link_list(struct node *link);
+
+int main(int argc, char* argv[])
+{
+    struct node *link;
+    struct node *head;
+    struct node *t;
+    struct node *link_new;
+    link = creat_link_list();
+
+    link_new = sort_link_list(link);
+    head = link_new;
+
+    while(link_new != NULL){
+        printf("%d ", link_new->number);
+        link_new = link_new->next;
+    }
+    printf("\n");
+
+    while(head != NULL){
+        t =head->next;
+        free(head);
+        head = t;
+    }
+    return 0;
+}
+
+struct node *creat_link_list(void){
+    struct node *t;
+    struct node *link = malloc(sizeof *link);
+    link->next = NULL;
+    int    i;
+    
+    for(i = 0, t = link; i < NUM; i++){
+        t->next = malloc(sizeof *t);
+        t = t->next; 
+        t->next = NULL;
+        t->number = rand()%1000;
+    }
+
+    return link;    
+}
+
+struct node *sort_link_list(struct node *link){
+    struct node *t;
+    struct node *u;
+    struct node *x;
+    
+    struct node *head = malloc(sizeof *head);
+    head->next = NULL;
+
+    for(t = link->next; t!= NULL; t = u){
+        u = t->next;
+        for(x = head; x->next!= NULL; x = x->next){
+            if(x->next->number >= t->number)
+                break;
+        }
+        t->next = x->next;
+        x->next  = t;
+    }
+    
+    free(link);
+
+    return head;
+}
+

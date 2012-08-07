@@ -1,0 +1,86 @@
+/*!
+ * \file	receiveFile.c
+ * \brief	
+ * \author	sunshine
+ * contact  mxdhlj@163.com
+ * \version	0.00
+ * \date	11-08-12 14:53:54
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <signal.h>
+#include <arpa/inet.h>
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <unistd.h>
+#include <netinet/in.h>
+#include <errno.h>
+
+#define path  "/home/sunshine/xiaodong.c"
+#define SERVERPORT 8000
+#define MAXCONN_NUM 10
+
+int main(int argc, char* argv[])
+{
+    struct sockaddr_in   src_addr;
+    int    sockfd, newfd;
+    char   buffer[256];
+    FILE   *fp;
+    int sin_size, recNum;
+
+    
+    if((sockfd = socket(AF_INET, SOCK_STREAM, 0)) == -1) {
+        printf("Creat socket error!: %s\n", strerror(errno));
+        exit(1);
+    }
+    
+    memset(&src_addr, 0, sizeof(src_addr));
+    src_addr.sin_family      = AF_INET;
+    src_addr.sin_port        = htons(SERVERPORT);
+    src_addr.sin_addr.s_addr = INADDR_ANY;
+
+    if(bind(sockfd, (struct sockaddr *)&src_addr, sizeof(src_addr)) == -1){
+        printf("Socket bind error!\n");
+        exit(-1);
+    }
+    
+    if(listen(sockfd, MAXCONN_NUM) == -1){
+        printf("Socket bind error!\n");
+        exit(-1);
+    }  
+    
+    if((fp = fopen(path, "w")) == NULL){
+        printf("Open error: %s\n", strerror(errno));
+    }
+
+    sin_size = sizeof(struct sockaddr_in);
+    /*
+     *  bind，listen，accept是服务器端用的函数；
+     *    accept调用时，服务器会一直阻塞到一个客户程序发出了连接；accept成功时返回最后服务器端的文件描述符，
+     *          这个时候服务器端就可以向该描述符写信息了；
+     */
+    if ((newfd = accept(sockfd, (struct sockaddr *)&src_addr, &sin_size)) == -1) {
+        perror("Socket accept error\n");
+    }
+    printf("Server: got connection from %s\n", inet_ntoa(src_addr.sin_addr));
+
+    while(1){
+        if((recNum = recv(newfd, &buffer, sizeof(buffer), 0)) == -1) {
+            printf("ERROR\n");
+            exit(-1);
+        }
+        if(recNum == 0){
+            printf("Done!\n");
+            exit(0);
+        }
+        printf("Receive:%d\n", recNum);
+        buffer[255] = '\0';
+        fputs((char *)buffer, fp);
+        memset(buffer, 0, sizeof(buffer));
+        sleep(1);
+    }
+    exit(0);
+}
+

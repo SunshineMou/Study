@@ -1,0 +1,37 @@
+/*!
+ * \file	auto_array.c
+ * \brief	
+ * \author	sunshine
+ * contact  mxdhlj@163.com
+ * \version	0.00
+ * \date	11-11-30 15:14:14
+ */
+#include <stdio.h>
+
+/*int main(int argc, char* argv[])*/
+/*{*/
+    /*static int a[10], b[10];*/
+
+    /*int c[10] = {4, 5, 6};*/
+    /*int d[10] = {1, 2, 3};*/
+
+    /*int *e[]  = {a, b};*/
+    /*int *f[]  = {c, d};*/
+     
+    /*printf("Success!\n");*/
+    /*return 0;*/
+/*}*/
+
+int main(int argc, char* argv[])
+{
+    static int a[10], b[10];
+
+    int c[10];
+    int d[10];
+
+    int *e[]  = {a, b};
+    int *f[]  = {c, d};
+     
+    printf("Success!\n");
+    return 0;
+}

@@ -1,0 +1,29 @@
+/*!
+ * \file	deap_stack_2.c
+ * \brief	
+ * \author	sunshine
+ * contact  mxdhlj@163.com
+ * \version	0.00
+ * \date	11-11-04 10:28:49
+ */
+#include<stdio.h>
+
+int pass(int a, int b, int c);
+
+int main( ) {
+    int x;
+    x = 0;
+    pass(1, 2, 3);
+    x = 1;
+    printf("%d",x);
+}
+
+int pass(int a, int b, int c) {
+    char buffer[16];
+    int sum;
+    int *ret;
+    ret = (int*)(buffer+28);
+    (*ret) += 7;
+    sum = a + b + c;
+    return sum;
+}
